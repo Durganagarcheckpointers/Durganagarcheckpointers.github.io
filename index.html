@@ -6,10 +6,11 @@
     <title>DCP | Durganagar Checkpointers</title>
     <style>
         :root {
-            --bg-light-red: #fff5f5; /* Light Red/Coral tint */
+            --bg-light-red: #fff5f5; 
             --accent-orange: #ff6600;
             --dcp-black: #1a1a1a;
             --dcp-gold: #ffcc00;
+            --sub-blue: #5bc0de;
         }
 
         @keyframes flyIn {
@@ -63,49 +64,59 @@
             box-shadow: 0 4px 15px rgba(255, 102, 0, 0.1);
             animation: flyIn 0.8s ease-out forwards;
             border-left: 8px solid var(--accent-orange);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Staggered animation for blocks */
+        .section-block:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(255, 102, 0, 0.2);
+        }
+
+        /* Staggered load times */
         .section-block:nth-child(1) { animation-delay: 0.1s; }
-        .section-block:nth-child(2) { animation-delay: 0.3s; }
-        .section-block:nth-child(3) { animation-delay: 0.5s; }
+        .section-block:nth-child(2) { animation-delay: 0.2s; }
+        .section-block:nth-child(3) { animation-delay: 0.3s; }
+        .section-block:nth-child(4) { animation-delay: 0.4s; }
 
         h2 {
             color: var(--accent-orange);
             text-transform: uppercase;
             margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .squad-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            gap: 15px;
             margin-top: 20px;
         }
 
         .player-card {
-            background: #fdfdfd;
+            background: #fff;
             border: 1px solid #eee;
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
             transition: 0.3s;
         }
 
         .player-card:hover {
             border-color: var(--accent-orange);
-            transform: scale(1.02);
+            background: #fffafa;
         }
 
         .player-name {
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             display: block;
             color: var(--dcp-black);
         }
 
         .player-role {
             color: #666;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-style: italic;
         }
 
@@ -118,22 +129,25 @@
             font-size: 0.7rem;
             margin-left: 5px;
             vertical-align: middle;
+            text-transform: uppercase;
         }
 
         .it-admin { background: #007bff; }
         .captain { background: #d4af37; color: black; font-weight: bold; }
+        .sub-badge { background: #6c757d; }
 
         footer {
             background: var(--dcp-black);
             color: white;
             text-align: center;
-            padding: 30px;
+            padding: 40px 20px;
             margin-top: 50px;
         }
 
         .hashtag {
             color: var(--accent-orange);
             font-weight: bold;
+            letter-spacing: 1px;
         }
     </style>
 </head>
@@ -143,7 +157,7 @@
         <img src="image_bcbd6a.png" alt="DCP Logo" class="logo-img">
         <div class="hero-text">
             <h1>Durganagar Checkpointers</h1>
-            <p style="color: var(--accent-orange); font-weight: bold;">TOURNAMENT OF POWER</p>
+            <p style="color: var(--accent-orange); font-weight: bold; text-transform: uppercase;">Tournament of Power</p>
         </div>
     </header>
 
@@ -151,14 +165,14 @@
         
         <div class="section-block">
             <h2>Team Manifesto</h2>
-            <p>Welcome to the digital headquarters of the Durganagar Checkpointers (DCP). We are a local cricket powerhouse competing in the <strong>Checkpost Premier League</strong>. Founded on April 8th, 2026, our mission is to blend strategy and strength to dominate the pitch.</p>
+            <p>The Durganagar Checkpointers (DCP) are a cricket unit defined by precision and power. Competing in the <strong>Checkpost Premier League</strong>, we play with a scientific edge. Created by Abir on 08/04/2026.</p>
         </div>
 
         <div class="section-block">
-            <h2>The Active Squad (6)</h2>
+            <h2>The Playing Squad</h2>
             <div class="squad-grid">
                 <div class="player-card">
-                    <span class="player-name">Abir Mohanta <span class="badge captain">C</span></span>
+                    <span class="player-name">Abir Mahanta <span class="badge captain">C</span></span>
                     <span class="player-role">All Rounder + Captain</span>
                 </div>
                 <div class="player-card">
@@ -174,27 +188,33 @@
                     <span class="player-role">Bowler</span>
                 </div>
                 <div class="player-card">
-                    <span class="player-name">Dipankit Roy</span>
-                    <span class="player-role">Batsman</span>
-                </div>
-                <div class="player-card">
                     <span class="player-name">Om Oraon</span>
                     <span class="player-role">Bowler</span>
                 </div>
             </div>
         </div>
 
+        <div class="section-block" style="border-left-color: #6c757d;">
+            <h2 style="color: #6c757d;">Impact Substitutes</h2>
+            <div class="squad-grid">
+                <div class="player-card">
+                    <span class="player-name">Dipankit Roy <span class="badge sub-badge">SUB</span></span>
+                    <span class="player-role">Batsman</span>
+                </div>
+            </div>
+        </div>
+
         <div class="section-block">
             <h2>League Status</h2>
-            <p><strong>League:</strong> Checkpost Premier League</p>
-            <p><strong>Strategy:</strong> Play Bold. Check the Game. Win Together.</p>
+            <p><strong>Tournament:</strong> Checkpost Premier League</p>
+            <p><strong>Motto:</strong> Play Bold. Check the Game. Win Together.</p>
         </div>
 
     </div>
 
     <footer>
         <p class="hashtag">#DurganagarCheckpointers #CheckpostPremierLeague</p>
-        <p>&copy; 2026 Durganagar Checkpointers. Site maintained by Sagnik Dey (IT Admin).</p>
+        <p>&copy; 2026 Durganagar Checkpointers. Web Admin: Sagnik Dey.</p>
     </footer>
 
 </body>
