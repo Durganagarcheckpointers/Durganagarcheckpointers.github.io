@@ -10,11 +10,25 @@
             --accent-orange: #ff6600;
             --dcp-black: #1a1a1a;
             --dcp-gold: #ffcc00;
+            /* Google Brand Colors */
+            --g-blue: #4285F4;
+            --g-red: #EA4335;
+            --g-yellow: #FBBC05;
+            --g-green: #34A853;
         }
 
         @keyframes flyIn {
             0% { opacity: 0; transform: translateY(40px); }
             100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Google Glow Pulse Animation */
+        @keyframes googleGlow {
+            0% { text-shadow: 0 0 5px var(--g-blue), 0 0 10px var(--g-blue); }
+            25% { text-shadow: 0 0 5px var(--g-red), 0 0 10px var(--g-red); }
+            50% { text-shadow: 0 0 5px var(--g-yellow), 0 0 10px var(--g-yellow); }
+            75% { text-shadow: 0 0 5px var(--g-green), 0 0 10px var(--g-green); }
+            100% { text-shadow: 0 0 5px var(--g-blue), 0 0 10px var(--g-blue); }
         }
 
         body {
@@ -31,14 +45,14 @@
             color: white;
             padding: 40px 20px;
             text-align: center;
-            border-bottom: 5px solid var(--accent-orange);
+            border-bottom: 3px solid var(--accent-orange); /* Thinner border */
         }
 
         .logo-img {
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            border: 4px solid var(--accent-orange);
+            border: 2px solid var(--accent-orange); /* Thinner border */
             box-shadow: 0 10px 20px rgba(0,0,0,0.5);
             margin-bottom: 15px;
             object-fit: cover;
@@ -59,35 +73,35 @@
         .section-block {
             background: white;
             padding: 30px;
-            border-radius: 15px;
+            border-radius: 12px;
             margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             animation: flyIn 0.8s ease-out forwards;
-            border-left: 8px solid var(--accent-orange);
+            border-left: 4px solid var(--accent-orange); /* Thinner border */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .section-block:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(255, 102, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 102, 0, 0.15);
         }
 
-        /* Responsive image container for match results */
         .match-pic {
             width: 100%;
             max-width: 800px;
-            border-radius: 10px;
+            border-radius: 8px;
             margin-top: 15px;
             display: block;
             margin-left: auto;
             margin-right: auto;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         h2 {
             color: var(--accent-orange);
             text-transform: uppercase;
             margin-top: 0;
+            font-size: 1.5rem;
         }
 
         .squad-grid {
@@ -99,22 +113,30 @@
 
         .player-card {
             background: #fff;
-            border: 1px solid #eee;
+            border: 1px solid #eee; /* Thinner border */
             padding: 15px;
             border-radius: 10px;
             transition: 0.3s;
-        }
-
-        .player-card:hover {
-            border-color: var(--accent-orange);
-            background: #fffafa;
+            cursor: pointer;
         }
 
         .player-name {
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             display: block;
             color: var(--dcp-black);
+            transition: 0.3s;
+        }
+
+        /* Trigger Google Glow Effect only on Hover */
+        .player-card:hover .player-name {
+            animation: googleGlow 2s infinite linear;
+            transform: scale(1.05);
+        }
+
+        .player-card:hover {
+            border-color: var(--g-blue);
+            background: #fcfcfc;
         }
 
         .player-role {
@@ -135,8 +157,8 @@
             text-transform: uppercase;
         }
 
-        .it-admin { background: #007bff; }
-        .captain { background: #d4af37; color: black; font-weight: bold; }
+        .it-admin { background: var(--g-blue); }
+        .captain { background: var(--dcp-gold); color: black; font-weight: bold; }
         .sub-badge { background: #6c757d; }
 
         footer {
@@ -167,13 +189,11 @@
         
         <div class="section-block">
             <h2>Match 1 Results</h2>
-            <p>Highlights from our opening match in the CPL.</p>
             <img src="match.jpeg" alt="Match 1 Scorecard" class="match-pic">
         </div>
 
         <div class="section-block" style="border-left-color: var(--dcp-gold);">
             <h2 style="color: var(--dcp-gold);">Match 2: Upcoming</h2>
-            <p>Gear up for the next battle! Check the details below.</p>
             <img src="match1.jpeg" alt="Match 2 Preview" class="match-pic">
         </div>
 
@@ -214,9 +234,9 @@
         </div>
 
         <div class="section-block">
-            <h2>League Details</h2>
-            <p><strong>Tournament:</strong> Checkpost Premier League (CPL)</p>
-            <p><strong>Team Motto:</strong> Play Bold. Check the Game. Win Together.</p>
+            <h2>Team Manifesto</h2>
+            <p><strong>League:</strong> Checkpost Premier League (CPL)</p>
+            <p><strong>Strategy:</strong> Play Bold. Check the Game. Win Together.</p>
         </div>
 
     </div>
