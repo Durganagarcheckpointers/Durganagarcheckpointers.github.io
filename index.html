@@ -11,6 +11,7 @@
             --accent-orange: #ff6600;
             --dcp-black: #1a1a1a;
             --dcp-gold: #ffcc00;
+            /* Google Brand Colors */
             --g-blue: #4285F4;
             --g-red: #EA4335;
             --g-yellow: #FBBC05;
@@ -22,6 +23,7 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
+        /* Google Glow Pulse Animation */
         @keyframes googleGlow {
             0% { text-shadow: 0 0 5px var(--g-blue), 0 0 10px var(--g-blue); }
             25% { text-shadow: 0 0 5px var(--g-red), 0 0 10px var(--g-red); }
@@ -57,6 +59,12 @@
             object-fit: cover;
         }
 
+        .hero-text h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -90,10 +98,15 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
+        /* Scorecard Table Styling */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
         }
 
         th, td {
@@ -138,6 +151,7 @@
             transition: 0.3s;
         }
 
+        /* Neon Google Glow on Hover */
         .player-card:hover .player-name {
             animation: googleGlow 2s infinite linear;
             transform: scale(1.05);
@@ -176,14 +190,21 @@
             padding: 40px 20px;
             margin-top: 50px;
         }
+
+        .hashtag {
+            color: var(--accent-orange);
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
 
     <header>
         <img src="Screenshot%202026-04-16%20205127.png" alt="DCP Logo" class="logo-img">
-        <h1>Durganagar Checkpointers</h1>
-        <p style="color: var(--accent-orange); font-weight: bold; text-transform: uppercase;">Tournament of Power</p>
+        <div class="hero-text">
+            <h1>Durganagar Checkpointers</h1>
+            <p style="color: var(--accent-orange); font-weight: bold; text-transform: uppercase;">Tournament of Power</p>
+        </div>
     </header>
 
     <div class="container">
@@ -194,49 +215,54 @@
         </div>
 
         <div class="section-block" style="border-left-color: var(--dcp-gold);">
-            <h2 style="color: var(--dcp-gold);">Match 2: Scorecard</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Player</th>
-                        <th>Runs</th>
-                        <th>Balls</th>
-                        <th>S/R</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Abir Mohanta (C)</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td>0.00</td>
-                    </tr>
-                    <tr>
-                        <td>Anurag Sarki</td>
-                        <td>1</td>
-                        <td>7</td>
-                        <td>14.28</td>
-                    </tr>
-                    <tr>
-                        <td>Raghbendra (Mayank)</td>
-                        <td>2</td>
-                        <td>9</td>
-                        <td>22.22</td>
-                    </tr>
-                    <tr>
-                        <td>Yougesh</td>
-                        <td>18</td>
-                        <td>9</td>
-                        <td>200.00</td>
-                    </tr>
-                    <tr class="high-score">
-                        <td>Om Oraon 🌟</td>
-                        <td>40</td>
-                        <td>33</td>
-                        <td>121.21</td>
-                    </tr>
-                </tbody>
-            </table>
+            <h2 style="color: var(--dcp-gold);">Match 2: Results</h2>
+            <p><strong>Result:</strong> <span style="color: var(--g-red); font-weight: bold;">Opponent won by 1 wicket</span> (14 balls left)</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th>Runs</th>
+                            <th>Balls</th>
+                            <th>S/R</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Abir Mohanta (C)</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Anurag Sarki</td>
+                            <td>1</td>
+                            <td>7</td>
+                            <td>14.28</td>
+                        </tr>
+                        <tr>
+                            <td>Raghbendra (Mayank)</td>
+                            <td>2</td>
+                            <td>9</td>
+                            <td>22.22</td>
+                        </tr>
+                        <tr>
+                            <td>Yougesh</td>
+                            <td>18</td>
+                            <td>9</td>
+                            <td>200.00</td>
+                        </tr>
+                        <tr class="high-score">
+                            <td>Om Oraon 🌟</td>
+                            <td>40</td>
+                            <td>33</td>
+                            <td>121.21</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size: 0.8rem; color: #666; margin-top: 15px;">DCP Total: 61/5 | Match played at 10:30 a.m. IST</p>
         </div>
 
         <div class="section-block">
@@ -244,7 +270,7 @@
             <div class="squad-grid">
                 <div class="player-card">
                     <span class="player-name">Sagnik Dey <span class="badge it-admin">IT ADMIN</span></span>
-                    <span class="player-role">Web Admin & Technical Support</span>
+                    <span class="player-role">Web Admin & Technical Lead</span>
                 </div>
             </div>
         </div>
@@ -275,11 +301,17 @@
             </div>
         </div>
 
+        <div class="section-block">
+            <h2>Team Manifesto</h2>
+            <p><strong>League:</strong> Checkpost Premier League (CPL)</p>
+            <p><strong>Motto:</strong> Play Bold. Check the Game. Win Together.</p>
+        </div>
+
     </div>
 
     <footer>
-        <p style="color: var(--accent-orange); font-weight: bold;">#DurganagarCheckpointers #CPL2026</p>
-        <p>&copy; 2026 Durganagar Checkpointers. Site maintained by Sagnik Dey.</p>
+        <p class="hashtag">#DurganagarCheckpointers #CheckpostPremierLeague</p>
+        <p>&copy; 2026 Durganagar Checkpointers. Site maintained by Sagnik Dey (IT Admin).</p>
     </footer>
 
 </body>
