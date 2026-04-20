@@ -10,7 +10,6 @@
             --accent-orange: #ff6600;
             --dcp-black: #1a1a1a;
             --dcp-gold: #ffcc00;
-            /* Google Brand Colors */
             --g-blue: #4285F4;
             --g-red: #EA4335;
             --g-yellow: #FBBC05;
@@ -22,7 +21,6 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* Google Glow Pulse Animation */
         @keyframes googleGlow {
             0% { text-shadow: 0 0 5px var(--g-blue), 0 0 10px var(--g-blue); }
             25% { text-shadow: 0 0 5px var(--g-red), 0 0 10px var(--g-red); }
@@ -45,23 +43,17 @@
             color: white;
             padding: 40px 20px;
             text-align: center;
-            border-bottom: 3px solid var(--accent-orange); /* Thinner border */
+            border-bottom: 3px solid var(--accent-orange);
         }
 
         .logo-img {
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            border: 2px solid var(--accent-orange); /* Thinner border */
+            border: 2px solid var(--accent-orange);
             box-shadow: 0 10px 20px rgba(0,0,0,0.5);
             margin-bottom: 15px;
             object-fit: cover;
-        }
-
-        .hero-text h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            letter-spacing: 1px;
         }
 
         .container {
@@ -77,7 +69,7 @@
             margin-bottom: 30px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             animation: flyIn 0.8s ease-out forwards;
-            border-left: 4px solid var(--accent-orange); /* Thinner border */
+            border-left: 4px solid var(--accent-orange);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -86,22 +78,29 @@
             box-shadow: 0 8px 20px rgba(255, 102, 0, 0.15);
         }
 
-        .match-pic {
+        /* Scorecard Table Styling */
+        table {
             width: 100%;
-            max-width: 800px;
-            border-radius: 8px;
-            margin-top: 15px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-collapse: collapse;
+            margin-top: 20px;
         }
 
-        h2 {
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: var(--bg-light-red);
             color: var(--accent-orange);
             text-transform: uppercase;
-            margin-top: 0;
-            font-size: 1.5rem;
+            font-size: 0.8rem;
+        }
+
+        .high-score {
+            font-weight: bold;
+            color: var(--g-green);
         }
 
         .squad-grid {
@@ -113,7 +112,7 @@
 
         .player-card {
             background: #fff;
-            border: 1px solid #eee; /* Thinner border */
+            border: 1px solid #eee;
             padding: 15px;
             border-radius: 10px;
             transition: 0.3s;
@@ -128,7 +127,6 @@
             transition: 0.3s;
         }
 
-        /* Trigger Google Glow Effect only on Hover */
         .player-card:hover .player-name {
             animation: googleGlow 2s infinite linear;
             transform: scale(1.05);
@@ -159,7 +157,6 @@
 
         .it-admin { background: var(--g-blue); }
         .captain { background: var(--dcp-gold); color: black; font-weight: bold; }
-        .sub-badge { background: #6c757d; }
 
         footer {
             background: var(--dcp-black);
@@ -168,71 +165,109 @@
             padding: 40px 20px;
             margin-top: 50px;
         }
-
-        .hashtag {
-            color: var(--accent-orange);
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
 
     <header>
         <img src="Screenshot%202026-04-16%20205127.png" alt="DCP Logo" class="logo-img">
-        <div class="hero-text">
-            <h1>Durganagar Checkpointers</h1>
-            <p style="color: var(--accent-orange); font-weight: bold; text-transform: uppercase;">Tournament of Power</p>
-        </div>
+        <h1>Durganagar Checkpointers</h1>
+        <p style="color: var(--accent-orange); font-weight: bold; text-transform: uppercase;">Tournament of Power</p>
     </header>
 
     <div class="container">
         
-        <div class="section-block">
-            <h2>Match 1 Results</h2>
-            <img src="match.jpeg" alt="Match 1 Scorecard" class="match-pic">
-        </div>
-
         <div class="section-block" style="border-left-color: var(--dcp-gold);">
-            <h2 style="color: var(--dcp-gold);">Match 2: Upcoming</h2>
-            Match Started at 10:30 a.m. IST(Indian Standard Time) Match resluts will be posted shrtly after theatch stay tuned!
+            <h2 style="color: var(--dcp-gold);">Match 2: Scorecard</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>Runs</th>
+                        <th>Balls</th>
+                        <th>S/R</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Abir Mohanta (C)</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Anurag Sarki</td>
+                        <td>1</td>
+                        <td>7</td>
+                        <td>14.28</td>
+                    </tr>
+                    <tr>
+                        <td>Mayank</td>
+                        <td>2</td>
+                        <td>9</td>
+                        <td>22.22</td>
+                    </tr>
+                    <tr>
+                        <td>Yougesh</td>
+                        <td>18</td>
+                        <td>9</td>
+                        <td>200.00</td>
+                    </tr>
+                    <tr class="high-score">
+                        <td>Om Oraon 🌟</td>
+                        <td>40</td>
+                        <td>33</td>
+                        <td>121.21</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <div class="section-block">
-            <h2>The Playing Squad</h2>
+            <h2>Management & Tech</h2>
+            <div class="squad-grid">
+                <div class="player-card">
+                    <span class="player-name">Sagnik Dey <span class="badge it-admin">IT ADMIN</span></span>
+                    <span class="player-role">Web Admin & Technical Support</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <h2>The Active Squad</h2>
             <div class="squad-grid">
                 <div class="player-card">
                     <span class="player-name">Abir Mohanta <span class="badge captain">C</span></span>
                     <span class="player-role">All Rounder + Captain</span>
                 </div>
                 <div class="player-card">
-                    <span class="player-name">Sagnik Dey <span class="badge it-admin">IT ADMIN</span></span>
-                    <span class="player-role">All Rounder + Wicketkeeper + IT Administrator</span>
-                </div>
-                <div class="player-card">
                     <span class="player-name">Anurag Sarki <span class="badge">VC</span></span>
                     <span class="player-role">All Rounder + Vice Captain</span>
+                </div>
+                <div class="player-card">
+                    <span class="player-name">Om Oraon</span>
+                    <span class="player-role">Bowler / Top Scorer</span>
+                </div>
+                <div class="player-card">
+                    <span class="player-name">Yougesh</span>
+                    <span class="player-role">Batsman</span>
+                </div>
+                <div class="player-card">
+                    <span class="player-name">Mayank</span>
+                    <span class="player-role">Batsman</span>
                 </div>
                 <div class="player-card">
                     <span class="player-name">Raghbendra Kumar Yadav</span>
                     <span class="player-role">Bowler</span>
                 </div>
-                <div class="player-card">
-                    <span class="player-name">Om Oraon</span>
-                    <span class="player-role">Bowler</span>
-                </div>
             </div>
-        </div>
-        <div class="section-block">
-            <h2>Team Manifesto</h2>
-            <p><strong>League:</strong> Checkpost Premier League (CPL)</p>
-            <p><strong>Strategy:</strong> Play Bold. Check the Game. Win Together.</p>
         </div>
 
     </div>
 
     <footer>
-        <p class="hashtag">#DurganagarCheckpointers #CheckpostPremierLeague</p>
-        <p>&copy; 2026 Durganagar Checkpointers. Web Admin: Sagnik Dey.</p>
+        <p style="color: var(--accent-orange); font-weight: bold;">#DurganagarCheckpointers #CPL2026</p>
+        <p>&copy; 2026 Durganagar Checkpointers. Site maintained by Sagnik Dey.</p>
     </footer>
 
 </body>
